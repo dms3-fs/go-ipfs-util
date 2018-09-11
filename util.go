@@ -1,4 +1,4 @@
-// Package util implements various utility functions used within ipfs
+// Package util implements various utility functions used within dms3fs
 // that do not currently have a better place to live.
 package util
 
@@ -13,11 +13,11 @@ import (
 	"time"
 
 	b58 "github.com/mr-tron/base58/base58"
-	mh "github.com/multiformats/go-multihash"
+	mh "github.com/dms3-mft/go-multihash"
 )
 
-// DefaultIpfsHash is the current default hash function used by IPFS.
-const DefaultIpfsHash = mh.SHA2_256
+// DefaultDms3FsHash is the current default hash function used by DMS3FS.
+const DefaultDms3FsHash = mh.SHA2_256
 
 // Debug is a global flag for debugging.
 var Debug bool
@@ -126,9 +126,9 @@ func RPartition(subject string, sep string) (string, string, string) {
 	return subject, "", ""
 }
 
-// Hash is the global IPFS hash function. uses multihash SHA2_256, 256 bits
+// Hash is the global DMS3FS hash function. uses multihash SHA2_256, 256 bits
 func Hash(data []byte) mh.Multihash {
-	h, err := mh.Sum(data, DefaultIpfsHash, -1)
+	h, err := mh.Sum(data, DefaultDms3FsHash, -1)
 	if err != nil {
 		// this error can be safely ignored (panic) because multihash only fails
 		// from the selection of hash function. If the fn + length are valid, it

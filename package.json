@@ -2,7 +2,7 @@
   "author": "whyrusleeping",
   "bugs": {},
   "gx": {
-    "dvcsimport": "github.com/ipfs/go-ipfs-util"
+    "dvcsimport": "github.com/dms3-fs/go-dms3-fs-util"
   },
   "gxDependencies": [
     {
@@ -21,8 +21,7 @@
   "gxVersion": "0.9.1",
   "language": "go",
   "license": "",
-  "name": "go-ipfs-util",
+  "name": "go-fs-util",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
   "version": "1.2.8"
 }
-
